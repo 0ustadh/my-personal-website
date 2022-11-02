@@ -11,6 +11,7 @@ a{text-decoration:none;}
   background-size: cover;
   padding: 20% 1% 20% 5%;
 }
+#contact{word-wrap:break-word}
 /* Animations */
 .animate{
     -webkit-transform: translateY(0);
