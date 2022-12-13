@@ -31,11 +31,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Font Awesome CDN end -->
 
-  <!-- W3.css -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-metro.css">
-   <!-- W3.css end -->
-
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
   defer></script>
@@ -53,48 +48,62 @@
 <body>
 
   <!-- Responsive navbar -->
-  <nav class="w3-bar w3-black w3-card" role="navigation">
-    <a href="#intro" class="w3-bar-item w3-button">Home</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small">About</a>
-    <a href="#skills" class="w3-bar-item w3-button w3-hide-small">Skills</a>
-    <a href="#projs" class="w3-bar-item w3-button w3-hide-small">Projects</a>
-    <a href="#svcs" class="w3-bar-item w3-button w3-hide-small">Services</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small" >Contact</a>
-    <a href="#footer" class="w3-bar-item w3-button w3-hide-small" 
-    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click for my 
-    Resume & Social media">CV & Social</a>
-      <a href="#" id="toggle" class="w3-bar-item w3-button w3-hide-small 
-      w3-white w3-right" onclick="toggleMode()" title="Click to switch to 
-      Light/Dark Mode">Light</a>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right 
-    w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+  <nav class="navbar navbar-expand-md navbar-dark bg-black p-1" 
+  role="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="logotitle.png" 
+        class="rounded-circle" width="30" hight="30"></a>
+      <button class="navbar-toggler text-end" type="button" 
+      data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="#intro" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">
+            Skills</a></li>
+          <li class="nav-item"><a href="#projs" class="nav-link">
+            Projects</a></li>
+          <li class="nav-item"><a href="#svcs" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">
+            Contact</a></li>
+          <li class="nav-item"><a href="#footer" class="nav-link" 
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click 
+            for my Resume & Social media">CV & Social</a></li>
+          <li class="nav-item"><a href="#" id="toggle" class="nav-link" 
+            onclick="toggleMode()" title="Click to switch to Light/Dark Mode">
+            Light</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
-  
-  <div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large 
-  w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button">About</a>
-    <a href="#skills" class="w3-bar-item w3-button">Skills</a>
-    <a href="#projs" class="w3-bar-item w3-button">Projects</a>
-    <a href="#svcs" class="w3-bar-item w3-button">Services</a>
-    <a href="#footer" class="w3-bar-item w3-button">Contact</a>
-    <a href="#footer" class="w3-bar-item w3-button">CV & Social</a>
-    <a href="#" id="toggle2" class="w3-bar-item w3-button w3-white 
-    w3-right" onclick="toggleMode()" title="Click to switch to Light/Dark Mode"
-    >Light</a>
-  </div>
   <!-- Responsive navbar end -->
 
   
   <header role="banner" class="container-fluid">
     <!-- Intro -->
-    <section id="intro" class="row text-white">
+    <section id="intro" class="row text-white intro">
       <div class="text-center p-5">
           <img src="prof256.png" class="rounded-circle" alt="profile"/>
           <h1 class="animate revealUp showme">Hello! I'm Ivan!</h1>
-          <p class="animate revealUp showme delay1">Your Front-end web 
-            developer</p>
-          <button type="button" class="btn btn-outline-light m-5 animate 
-          revealUp showme delay2"><a href="#about">Learn More</a></button>
+          <p class="animate revealUp showme delay1">Your</p>
+          <div class="btn-group">
+            <button type="button" id="btn1" class="btn btn-outline-light m-1 
+            animate revealUp showme delay2" onclick="showBtn();webDevp()"><a 
+            href="#" id="wd" class="b">Web Developer</a>
+            </button>
+            <button type="button" id="btn2" class="btn btn-outline-light m-1 
+            animate revealUp showme delay2" onclick="showBtn();compTechn()"><a 
+            href="#" id="ct" class="b">Computer Technician
+            </a></button>
+          </div>
+
+          <div id="learnMore" class="d-none">
+            <button type="button" class="btn btn-outline-light m-5 animate 
+             delay2"><a href="#about" class="b">Learn More</a></button>
+          </div>
+
         </div>
     </section>
     <!-- Intro end -->
@@ -103,22 +112,27 @@
   <main class="m-3" role="main">
     
       <!-- About -->
-      <section id="about" class="text-center">
+      <section id="about" class="text-center container-fluid">
         <h2 class="mt-5">About me</h2>
-        <div class="container w3-padding-64">
-          <!-- Add content later, just publish this website -->
+
+        <!-- Web Developer -->
+        <article class="container p-5 d-none" id="webdev">
           <p class="h5 mb-5">I'm an skilled Front-end web developer.
             Creating hand-coded Webpages with passion and dedication. 
             Freelancing while seeking for an entry-level position to gain 
             experience in the IT Industry. Offering you my services below 
             (<i>see <a href="#svcs">Services Offered</a> section</i>).</p>
+        </article>
+
+        <!-- Computer Technician -->
+        <article class="container p-5 d-none" id="technic">
           <p class="h5 mb-5">Also, I'm also a Vocational course graduate 
             (Computer Systems Servicing) since this year and possesses a 
             National Certificate (NCII) on Computer Systems Servicing. So, I 
             can also Repair, Troubleshoot, Diagnose computer systems and 
             networks.</p>
           <!-- Accordion here -->
-          <p class="w3-center accToggle" onclick="accordion('accordion');
+          <p class="text-center accToggle" onclick="accordion('accordion');
            accText('txt1')">Show <span id="txt1">More</span> <i class="fa 
            fa-caret-down"></i></p>
          <!-- Accordion content -->
@@ -127,57 +141,80 @@
           <img src="nc.png" alt="My National Certificate" class="img-fluid"/>
          </div>
          <!-- Accordion end -->
-        </div>
+        </article>
+
       </section>
       <hr/>
       <!-- About end -->
 
       <!-- Skills / Techs Section -->
-      <section id="skills" class="mt-5 mb-1 w3-margin-left container-fluid">
-        <h2 class="text-center mb-5">Technologies / Skills</h2>
-        <div class="w3-row-padding">
-          <div class="w3-col m4 mb-2 animate revealUp showme">
-              <a href="#" aria-label="HTML5"><img class="img-fluid rounded" 
+      <section id="skills" class="m-5">
+        <h2 class="text-center mb-5">Skills</h2>
+        <!-- Web Dev -->
+        <div class="row row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 d-none" id="webD">
+          <div class="col-sm m4 mb-2 animate revealUp showme">
+              <a href="#" class="a" aria-label="HTML5"><img class="img-fluid rounded" 
                 src="html.png" alt="HTML5" title='HTML5'/></a>
           </div>
-          <div class="w3-col m4 mb-2 animate revealUp showme delay1">
-              <a href="#" aria-label="CSS3"><img class="img-fluid rounded" 
+          <div class="col-sm m4 mb-2 animate revealUp showme delay1">
+              <a href="#" class='a' aria-label="CSS3"><img class="img-fluid rounded" 
                 src="css3.png" alt="CSS3" title='CSS3'/></a>
           </div>
-          <div class="w3-col m4 mb-2 animate revealUp showme delay2">
-              <a href="#" aria-label="JavaScript"><img class="img-fluid 
+          <div class="col-sm m4 mb-2 animate revealUp showme delay2">
+              <a href="#" class="a" aria-label="JavaScript"><img class="img-fluid 
                 rounded" src="javascript.png" alt="JavaScript" 
                 title='JavaScript'/></a>
           </div>
-          <div class="w3-col m4 mt-3 animate revealUp showme">
-              <a href="#" aria-label="Bootstrap"><img class="img-fluid rounded"
+          <div class="col-sm m4 mt-3 animate revealUp showme">
+              <a href="#" class="a" aria-label="Bootstrap"><img class="img-fluid rounded"
                  src="bootstrap.png" alt="Bootstrap" title='Bootstrap'/></a>
           </div>
-          <div class="w3-col m4 mt-3 animate revealUp showme delay1">
-              <a href="#" aria-label="JQuery"><img class="img-fluid rounded" 
+          <div class="col-sm m4 mt-3 animate revealUp showme delay1">
+              <a href="#" class="a" aria-label="JQuery"><img class="img-fluid rounded" 
                 src='jquery.png' alt='JQuery' title='JQuery'/></a>
           </div>
-          <div class="w3-col m4 mt-3 animate revealUp showme delay2">
-              <a href="#" aria-label="ReactJS"><img class="img-fluid rounded" 
+          <div class="col-sm m4 mt-3 animate revealUp showme delay2">
+              <a href="#" class="a" aria-label="ReactJS"><img class="img-fluid rounded" 
                 src="react.png" alt="ReactJS" title="ReactJS"/></a>
           </div>
-          <div class="w3-col m4 mt-3 animate revealUp showme">
-            <a href="#" aria-label="Sass"><img class="img-fluid rounded" 
+          <div class="col-sm m4 mt-3 animate revealUp showme">
+            <a href="#" class="a" aria-label="Sass"><img class="img-fluid rounded" 
               src="sass.png" alt="Sass" title="Sass"/></a>
           </div>
-          <div class="w3-col m4 mt-3 animate revealUp showme delay1">
-            <a href="#" aria-label="Git"><img class="img-fluid rounded" 
+          <div class="col-sm m4 mt-3 animate revealUp showme delay1">
+            <a href="#" class="a" aria-label="Git"><img class="img-fluid rounded" 
               src="git.png" alt="Git" title="Git"/></a>
           </div>
       </div>
+      <!-- Computer Technician -->
+      <div class="row row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 container-fluid d-none" id="compT">
+        <div class="item1 col-sm">gfg</div>
+        <div class="item2 col-sm">gfg</div>
+        <div class="item3 col-sm">gfg</div>
+        <div class="item4 col-sm">gfg</div>
+        <div class="item5 col-sm">gfg</div>
+        <div class="item6 col-sm">gfg</div>
+        <div class="item7 col-sm">gfg</div>
+        <div class="item8 col-sm">gfg</div>
+      </div>
+
+      <article class="container-fluid text-center">
+        <h2 class="mb-5 mt-5">Soft Skills</h2>
+        <div class="row row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+          <div class="col-sm">Hi</div>
+          <div class="col-sm">Hi</div>
+          <div class="col-sm">Hi</div>
+          <div class="col-sm">Hi</div>
+        </div>
+      </article>
     </section>
     <hr/>
     <!-- Skills / Techs Section end -->
 
     <!-- Projects -->
-    <section id="projs" class="mb-5">
+    <section id="projs" class="mb-5 container-fluid">
       <h2 class="mb-5 text-center">Projects Accomplished</h2>
-      <div class="row row-cols-md-4 card-deck gap-4 justify-content-center">
+      <div class="row row-cols-md-4 card-deck gap-4 justify-content-center" id="Web">
         <div class="col-md-5 card p-3 animate revealUp showme">
           <h3 class="text-dark"><a href="https://0ustadh.github.io/itwebsolutions/boycoc/index.html" 
             target="_blank">BOY COC</a></h3>
@@ -199,85 +236,103 @@
           <iframe src="https://0ustadh.github.io/itwebsolutions/index.html"></iframe>
         </div>
       </div>
+      <div class="row row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 container-fluid d-none" id="Tech">
+        <div id="col-sm">content</div>
+        <div id="col-sm">content</div>
+        <div id="col-sm">content</div>
+        <div id="col-sm">content</div>
+      </div>
     </section>
     <hr/>
     <!-- Projects end -->
 
     <!-- Services Offered -->
-    <section id="svcs">
+    <section id="svcs" class="container-fluid">
       <h2 class="text-center">Services Offered:</h2>
-      <div class="w3-row-padding text-center">
-        <div class="w3-col m4 animate revealUp showme w3-responsive">
+      <article class="row row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 text-center 
+      d-none" id="webDev">
+        <div class="col-sm animate revealUp showme">
             <img src="bgimg240p.png" alt="web development" 
             class="img-fluid"/>
-            <a href='#intro'><h3>Hand-coded Webpage Building</h3></a>
+            <a href='#intro' class="a"><h3>Hand-coded Webpage Building</h3></a>
         </div>
-        <div class="w3-col m4 animate revealUp showme delay2 w3-responsive">
+        <div class="col-sm animate revealUp showme delay2">
           <img src="wixbuilding.png" alt="Wix/GoDaddy Webpage Building" 
           class="img-fluid"/>
-            <a href='#intro'><h3>Wix/Squarespace Webpage Building</h3></a>
+            <a href='#intro' class="a"><h3>Wix/Squarespace Webpage Building</h3></a>
         </div>
-        <div class='w3-col m4 animate revealUp showme delay1 w3-responsive'>
+        <div class='col-sm animate revealUp showme delay1'>
             <img src="converting.png" alt="Convert image to HTML" 
             class="img-fluid"/>
-            <a href='#intro'><h3>Convert PSD/PNG/Image to HTML</h3></a>
+            <a href='#intro' class="a"><h3>Convert PSD/PNG/Image to HTML</h3></a>
         </div>
-        <div class="w3-col m4 animate revealUp showme delay2 w3-responsive">
+        <div class="col-sm animate revealUp showme delay2">
             <img src="bugfixing.png" alt="Bug Fixing and Webpage improvements" 
             class="img-fluid"/>
-            <a href='#intro'><h3>Bug Fixing and Webpage improvements</h3></a>
+            <a href='#intro' class="a"><h3>Bug Fixing and Webpage improvements</h3></a>
         </div>
-      </div>
+      </article>
+
+      <article class="row row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 text-center 
+      d-none" id="compTech">
+        <div class="col-sm m-5"><h2>Hi</h2></div>
+        <div class="col-sm">Hi</div>
+        <div class="col-sm">Hi</div>
+      </article>
+
     </section>
     <hr/>
     <!-- Services Offered end -->
 
     <!-- Contact -->
-    <section id="contact" class="text-center">
+    <section id="contact" class="text-center container-fluid">
       <h2>Contact Me</h2>
       <article class="mt-1 text-center">
       <div class="container-fluid p-3">
         <p class="display-4 mb-5"><i class="fa fa-envelope"></i>
-            <a href="mailto:delatorreivanvincent19@gmail.com">
+            <a href="mailto:delatorreivanvincent19@gmail.com" class="a">
               delatorreivanvincent19@gmail.com</a></p>
         <p class="display-4 mb-5"><i class="fa fa-globe"></i> 
-          <a href='https://www.fiverr.com/ivanvincent019' target="_blank">
-            Fiverr</a></p>
-        <p class="display-4 mb-5"><i class="fa fa-phone"></i>
-           (+63) 966-546-3538</p>
+          <a href='https://www.fiverr.com/ivanvincent019' class="a" 
+          target="_blank">Fiverr</a></p>
       </div>
-      <div class="w3-dropdown-hover">
-      <button type="button" class="btn btn-outline-dark toggle"><a 
-        href="webdevelopercv.pdf" class="w3-bar-item">Download CV <i class="fa 
-        fa-caret-down"></i></a></button>
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="https://0ustadh.github.io/itwebsolutions/portfolio/index.html"
-           class="w3-bar-item w3-button">View CV</a>
-        </div>
+
+      <div class="dropdown">
+        <button type="button" class="btn btn-outline-dark dropdown-toggle" 
+        data-bs-toggle="dropdown" id="cv">View My CV</button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="webdevelopercv.pdf">Download 
+            CV</a></li>
+          <li><a class="dropdown-item" 
+            href="https://0ustadh.github.io/ittechsolutions/portfolio/index.html">
+            View CV</a></li>
+        </ul>
       </div>
+
     </article>
     </section>
     <!-- Contact end -->
 
   </main>
 
-  <footer class="w3-container w3-metro-black w3-center w3-margin-top" 
-  id="footer">
+  <footer class="w3-metro-darken w3-center mt-5 container-fluid" id="footer">
     <p class="mt-3">Find me on social media.</p>
-    <a href='https://web.facebook.com/ivanvincent.delatorre.19/' 
-    target="_blank" aria-label="Facebook"><i class="fa fa-facebook-official 
-    w3-hover-opacity w3-xxlarge"></i></a>
-    <a href='https://www.instagram.com/ivdt_19/' target="_blank" 
-    aria-label="Instagram"><i class="fa fa-instagram w3-hover-opacity 
-    w3-xxlarge"></i></a>
-    <a href='https://twitter.com/IvanVincent019' target="_blank" 
-    aria-label="Twitter"><i class="fa fa-twitter w3-hover-opacity 
-    w3-xxlarge"></i></a>
-    <a href='https://www.linkedin.com/in/ivan-vincent-dela-torre-153384247/' 
-    target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin 
-    w3-hover-opacity w3-xxlarge"></i></a>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" 
-      target="_blank" aria-label="W3.css">w3.css</a></p>
+    <div class="d-inline-flex justify-content-center">
+      <a href='https://web.facebook.com/ivanvincent.delatorre.19/' 
+      target="_blank" aria-label="Facebook"><i class="fa fa-facebook-official 
+      w3-hover-opacity w3-xxlarge"></i></a>
+      <a href='https://www.instagram.com/ivdt_19/' target="_blank" 
+      aria-label="Instagram"><i class="fa fa-instagram w3-hover-opacity 
+      w3-xxlarge"></i></a>
+      <a href='https://twitter.com/IvanVincent019' target="_blank" 
+      aria-label="Twitter"><i class="fa fa-twitter w3-hover-opacity 
+      w3-xxlarge"></i></a>
+      <a href='https://www.linkedin.com/in/ivan-vincent-dela-torre-153384247/' 
+      target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin 
+      w3-hover-opacity w3-xxlarge"></i></a>
+    </div>
+    <p class="mt-3">Powered by <a href="https://www.w3schools.com/w3css/default.asp" 
+      target="_blank" aria-label="Bootstrap"><u>Bootstrap</u></a></p>
   </footer>
 
 </body>

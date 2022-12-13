@@ -1,18 +1,100 @@
+// Global Variables
+/* If a variable will be used by 2 or more different functions, make it 
+a global variable. Don't Repeat Yourself! */
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const web = document.getElementById('webdev');
+const tech = document.getElementById('technic');
+const webd = document.getElementById('webD');
+const compt = document.getElementById('compT');
+const webDev = document.getElementById('webDev');
+const compTech = document.getElementById('compTech');
+const toggler = document.getElementById('toggle');
+const intro = document.getElementById('intro');
+const Web = document.getElementById('Web');
+const Tech = document.getElementById('Tech'); 
+// Global variables end
+
 // Responsive Topnav
-function myFunction() {
-    var x = document.getElementById("demo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else { 
-      x.className = x.className.replace(" w3-show", "");
-    }
-   }
+function navLinks(){
+  document.querySelectorAll(".nav-link").forEach((el) => {
+    el.classList.add('text-white');
+  });
+}
+navLinks();
 // Responsive Topnav end
+
+// Header button toggle
+function showBtn() {
+  const lm = document.getElementById('learnMore');
+  if(btn1.className.indexOf("d-block") == -1 || 
+  btn2.className.indexOf("d-block") == -1){
+    lm.classList.remove('d-none');
+    lm.className += ' d-block';
+  }
+}
+// Header button toggle end
+
+// Career Toggle
+function webDevp(){
+  const wd = document.getElementById('wd');
+  if(btn1.click){
+    tech.classList.remove('active');
+    web.className += ' active';
+    wd.removeAttribute('href');
+    wd.setAttribute('href', '#webdev');
+    web.classList.remove('d-none');
+    web.className += ' d-visible';
+    tech.classList.remove('d-visible');
+    tech.className += ' d-none';
+    webd.classList.remove('d-none');
+    webd.className += ' d-visible';
+    compt.classList.remove('d-visible');
+    compt.className += ' d-none';
+    webDev.classList.remove('d-none');
+    webDev.className += ' d-visible';
+    compTech.classList.remove('d-visible');
+    compTech.className += ' d-none';
+    Web.classList.remove('d-none');
+    Web.className += ' d-visible';
+    Tech.classList.remove('d-visible');
+    Tech.className += ' d-none';
+    changeBgDev();
+  }
+}
+function compTechn(){
+  const ct = document.getElementById('ct');
+  if(btn2.click){
+    web.classList.remove('active');
+    tech.className += ' active';
+    ct.removeAttribute('href');
+    ct.setAttribute('href', '#technic');
+    tech.classList.remove('d-none');
+    tech.className += ' d-visible';
+    web.classList.remove('d-visible');
+    web.className += ' d-none';
+    compt.classList.remove('d-none');
+    compt.className += ' d-visible';
+    webd.classList.remove('d-visible');
+    webd.className += ' d-none';
+    compTech.classList.remove('d-none');
+    compTech.className += ' d-visible';
+    webDev.classList.remove('d-visible');
+    webDev.className += ' d-none';
+    Tech.classList.remove('d-none');
+    Tech.className += ' d-visible';
+    Web.classList.remove('d-visible');
+    Web.className += ' d-none';
+    changeBgTech();
+  }
+}
+// Career Toggle end
 
 // Dark mode program
 function toggleMode(){
   const bod = document.body;
-  bod.classList.toggle('w3-black');
+  bod.classList.toggle('bg-black');
+  bod.classList.toggle('text-white');
   // For dark mode button content
   toggleText();
   // For cards
@@ -25,24 +107,20 @@ function toggleMode(){
   darkFoot();
   // For Buttons
   darkBtn();
+  cvBtn();
+  // For links
+  toggleLinks();
   }
   function toggleText(){
-    const toggler = document.getElementById('toggle');
-    const toggler2 = document.getElementById('toggle2');
-      if (toggler.innerHTML === 'Light' && toggler2.innerHTML === 'Light'){
+      if (toggler.innerHTML === 'Light'){
         toggler.innerHTML = "Dark";
-        toggler2.innerHTML = "Dark";
       } else{
         toggler.innerHTML = "Light";
-        toggler2.innerHTML = "Light";
       }
     }
   // Changes bgcolor of toggler when clicked 
   function toggleBtn(){
-    const btn = document.getElementById('toggle');
-    const btn2 = document.getElementById('toggle2');
-    btn.classList.toggle('w3-black');
-    btn2.classList.toggle('w3-black');
+    toggler.classList.toggle('w3-black');
     }
   // Custom Dark theme for cards
   function cardDark(){
@@ -53,22 +131,21 @@ function toggleMode(){
   // Headers will be white when in Dark Mode
   function toggleHead() {
       document.querySelectorAll(".head").forEach((el) => {
-        el.classList.toggle('w3-text-white');
+        el.classList.toggle('text-white');
       });
   }
   // Dark Mode Footer 
   function darkFoot() {
     let x = document.getElementById('footer');
-    if (x.className.indexOf("w3-metro-black") == -1) {
-      x.className += " w3-metro-black";
+    if (x.className.indexOf("w3-metro-darken") == -1) {
+      x.className += " w3-metro-darken";
     } else {
-      x.className = x.className.replace(" w3-metro-black", " card-dark");
+      x.className = x.className.replace(" w3-metro-darken", " card-dark");
     }
   }
   // Dark Mode Buttons
   function darkBtn(){
     document.querySelectorAll(".toggle").forEach((el) => {
-      //el.classList.toggle('btn-outline-primary');
       if (el.className.indexOf("btn-outline-dark") == -1) {
         el.className += " btn-outline-dark";
       } else {
@@ -77,13 +154,29 @@ function toggleMode(){
       }
     });
   }
+  function cvBtn(){
+    const cv = document.getElementById('cv');
+     if(cv.className.indexOf('btn-outline-light') == -1){
+      cv.className = cv.className.replace(' btn-outline-dark',
+      ' btn-outline-light');
+    } else {
+      cv.className = cv.className.replace(' btn-outline-light',
+      ' btn-outline-dark');
+    }
+  }
+  // Links will be white in dark mode
+  function toggleLinks(){
+    document.querySelectorAll('.a').forEach((el) => {
+      el.classList.toggle('text-white');
+    });
+  }
   // Dark mode by default
   window.onload = function() {
      toggleMode(); 
   }
   // Dark mode program end
 
-// Fade-in animation
+// Fade-in animation (jQuery)
 $(document).ready(function() {
   $(window).scroll( function(){
     $('.revealUp').each( function(i){
@@ -132,3 +225,12 @@ function accordion(id) {
   }
 }
 // Accordion end
+
+// Change occupation background
+function changeBgDev() {
+  intro.style.backgroundImage = "url('bgimg.jpg')";
+}
+function changeBgTech() {
+  intro.style.backgroundImage = "url('comptech.jpg')";
+}
+// Change occupation background end
