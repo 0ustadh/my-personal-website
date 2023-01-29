@@ -1,7 +1,7 @@
-html,body,h1,h2,h3,h4,h5,h6 {font-family:"Roboto", sans-serif}
+html,body,h1,h2,h3,h4,h5,h6 {font-family:"Segoe UI", sans-serif}
 body, footer{margin:0;padding:0}
-
 a{text-decoration:none;}
+
 ::selection{background-color:goldenrod; color:white;}
 .golden, a:hover{color:goldenrod;}
 .navbar-toggler-icon:hover{color:white !important}
@@ -65,3 +65,11 @@ footer a{color:white}
 /* Dark Mode */
 .card-dark{background-color:#121212; color:white;}
 /* Dark Mode end */
+
+/* Glass Effect styles */
+.navbar{
+  background-color:rgba(30,30,30,0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+/* Glass Effect styles end */
