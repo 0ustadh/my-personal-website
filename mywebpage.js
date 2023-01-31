@@ -173,6 +173,8 @@ function toggleMode(){
   // Dark mode by default
   window.onload = function() {
      toggleMode(); 
+     // Web Developer by default
+     webDevp();
   }
   // Dark mode program end
 
