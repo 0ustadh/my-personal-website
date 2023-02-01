@@ -29,6 +29,7 @@ footer{display:inline-block}
 #intro{background:url('bgimg.jpg');background-size:cover}
 .intro{background-size:cover}
 #contact{word-wrap:break-word}
+.skill-logo{font-size:72px}
 /* Animations */
 .animate{
     -webkit-transform: translateY(0);

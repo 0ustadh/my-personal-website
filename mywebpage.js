@@ -238,3 +238,7 @@ function changeBgTech() {
   intro.style.backgroundImage = "url('comptech.jpg')";
 }
 // Change occupation background end
+
+// Change Font
+
+// Change Font end
