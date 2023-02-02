@@ -253,3 +253,15 @@ const Segoe = document.getElementById('Segoe');
   font.innerHTML = Segoe.innerHTML;
  }
 // Change Font Program end
+
+// Simplify Interactive controls
+// Web Developer
+function WebDev() {
+  showBtn();
+  webDevp();
+}
+// Computer Technician
+function ComTech() {
+  showBtn();
+  compTechn();
+}
