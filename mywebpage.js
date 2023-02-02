@@ -239,6 +239,17 @@ function changeBgTech() {
 }
 // Change occupation background end
 
-// Change Font
-
-// Change Font end
+// Change Font Program
+const body = document.body;
+const font = document.getElementById('font');
+const Roboto = document.getElementById('Roboto');
+const Segoe = document.getElementById('Segoe');
+ function roboto(){
+  body.style.fontFamily = 'Roboto';
+  font.innerHTML = Roboto.innerHTML;
+ }
+ function segoe(){
+  body.style.fontFamily = 'Segoe UI';
+  font.innerHTML = Segoe.innerHTML;
+ }
+// Change Font Program end
